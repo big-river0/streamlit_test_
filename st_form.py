@@ -19,7 +19,7 @@ with st.form('my_form'):
 
 if submitted:
     st.markdown(f'''
-        ☕ 주문하신 내용:
+        주문하신 내용:
         - 메인 메뉴: `{coffee_bean_val}`
         - 서브 메뉴: `{coffee_roast_val}`
         - 음료: `{brewing_val}`
