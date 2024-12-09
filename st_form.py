@@ -3,9 +3,8 @@ import streamlit as st
 st.title('st.form')
 
 # 'with' 표기법을 사용한 전체 예시
-st.header('1. `with` 표기법 사용 예시')
-st.subheader('커피 머신')
-
+st.header('1. 과목 수 선택')
+num_subjects = st.selectbox(1,2,3,4,5,6,7,8,9,10,11)
 with st.form('my_form'):
     st.subheader('**커피 주문하기**')
 
