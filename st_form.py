@@ -3,18 +3,16 @@ import streamlit as st
 st.title('st.form')
 
 # 'with' 표기법을 사용한 전체 예시
-st.header('1. 과목 수 선택')
-num_subjects = st.selectbox('과목 수'['1','2','3','4','5','6','7','8','9','10'])
+st.header('1. 음식 주문')
+
 with st.form('my_form'):
-    st.subheader('**커피 주문하기**')
+    st.subheader('**음식 주문하기**')
 
     # 입력 위젯
-    coffee_bean_val = st.selectbox('커피콩', ['아라비카', '로부스타'])
-    coffee_roast_val = st.selectbox('커피 로스팅', ['라이트', '미디엄', '다크'])
-    brewing_val = st.selectbox('추출 방법', ['에어로프레스', '드립', '프렌치 프레스', '모카 포트', '사이폰'])
-    serving_type_val = st.selectbox('서빙 형식', ['핫', '아이스', '프라페'])
-    milk_val = st.select_slider('우유 정도', ['없음', '낮음', '중간', '높음'])
-    owncup_val = st.checkbox('자신의 컵 가져오기')
+    coffee_bean_val = st.selectbox('메인 메뉴', ['돈까스', '제육','파스타','카레돈까스','쫄면','치즈돈까스'])
+    coffee_roast_val = st.selectbox('서브 메뉴', ['샐러드', '치킨 샐러드'])
+    brewing_val = st.selectbox('음료', ['콜라', '사이다', '레몬에이드', '복숭아 아이스티'])
+    serving_type_val = st.selectbox('추가 주문', ['밥 추가', '미니 쫄면', '미니 샐러드'])
 
     # 모든 양식은 제출 버튼을 가져야 함
     submitted = st.form_submit_button('제출')
@@ -22,12 +20,10 @@ with st.form('my_form'):
 if submitted:
     st.markdown(f'''
         ☕ 주문하신 내용:
-        - 커피콩: `{coffee_bean_val}`
-        - 커피 로스팅: `{coffee_roast_val}`
-        - 추출 방법: `{brewing_val}`
-        - 서빙 형식: `{serving_type_val}`
-        - 우유: `{milk_val}`
-        - 자신의 컵 가져오기: `{owncup_val}`
+        - 메인 메뉴: `{coffee_bean_val}`
+        - 서브 메뉴: `{coffee_roast_val}`
+        - 음료: `{brewing_val}`
+        - 추가 주문: `{serving_type_val}`
         ''')
 else:
     st.write('☝️ 주문하세요!')
